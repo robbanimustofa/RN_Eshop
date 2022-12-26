@@ -1,11 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { Button } from 'native-base'
+
+import ProductContainer from './Screens/Product/productContainer.js';
+import Header from './Shared/Header.js';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Header />
+      <ProductContainer/>
       <StatusBar style="auto" />
+      <Button
+      _light={{ bg: 'teal', _text: { color: 'white' } }}
+      _dark={{ bg: 'amber' }}
+    >
+      Sample
+    </Button>
     </View>
   );
 }

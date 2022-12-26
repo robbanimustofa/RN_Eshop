@@ -1,0 +1,26 @@
+[
+    {
+        "_id": "6370e9db7be9e4d6096a3da7",
+        "name": "product 1",
+        "description": "product 1 description",
+        "richDescription": "product 1 richDescription",
+        "image": [
+            "product 1/image.jpg"
+        ],
+        "brand": "product 1 brand",
+        "price": "25",
+        "category": {
+            "_id": "63623929ccb5136022f1871e",
+            "name": "Charge 3W",
+            "icon": "Electronic",
+            "color": "Green",
+            "__v": 0
+        },
+        "countInStock": 10,
+        "rating": 4,
+        "numReviews": 22,
+        "isFeatured": true,
+        "dateCreated": "2022-11-13T12:58:03.044Z",
+        "__v": 0
+    }
+]
