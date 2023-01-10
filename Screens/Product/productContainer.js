@@ -1,5 +1,6 @@
+import { Box } from "native-base";
 import React, {useEffect, useState} from "react";
-import { View, Text, StyleSheet, ActivityIndicator, FlatList } from "react-native";
+import { View, StyleSheet, ActivityIndicator, FlatList } from "react-native";
 import ProductList from "./ProductList";
 
 const data = require('../../assets/product.json')
@@ -17,26 +18,23 @@ const productContainer = (props) =>{
 
     return(
         <View style={styles.container}>
-            <Text>Product Container</Text>
-            <View>
+            <Box>
                 <FlatList
-                    horizontal
+                    horizontal={false}
+                    numColumns={2}
                     data={product}
                     renderItem={({item})=><ProductList key={item.id} item={item} />}
                     keyExtractor={item => item._id}
                 />
-            </View>
+            </Box>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-    //   flex: 1,
-    //   backgroundColor: '#fff',
-    //   alignItems: 'center',
-    //   justifyContent: 'center',
-      marginTop:30
+        // flexWrap:'wrap',
+        backgroundColor: '#fff',
     },
   });
 

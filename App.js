@@ -1,31 +1,31 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { Button } from 'native-base'
+import { StyleSheet } from 'react-native';
+import { NativeBaseProvider, Box} from 'native-base'
 
 import ProductContainer from './Screens/Product/productContainer.js';
 import Header from './Shared/Header.js';
+import SearchBar from './Shared/SearchBar.js';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    // <View style={styles.container}>
+    <NativeBaseProvider>
       <Header />
-      <ProductContainer/>
+      <SearchBar/>
+      <Box>
+        <ProductContainer style={styles.container} />
+      </Box>
       <StatusBar style="auto" />
-      <Button
-      _light={{ bg: 'teal', _text: { color: 'white' } }}
-      _dark={{ bg: 'amber' }}
-    >
-      Sample
-    </Button>
-    </View>
+    </NativeBaseProvider>
+
+    // </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingHorizontal : 10
   },
 });

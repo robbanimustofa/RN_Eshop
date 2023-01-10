@@ -1,26 +1,27 @@
 import React from 'react'
-import { SafeAreaView, View, Image, StyleSheet, Text } from 'react-native'
+import { StyleSheet } from 'react-native'
+import { Box, Divider, Heading } from 'native-base'
 
 const Header = () => {
   return (
-    <SafeAreaView style={styles.header}>
-        <View>
-            <Image/>
-            <Text style={{fontSize:25}}>EShop</Text>
-        </View>
-    </SafeAreaView>
+    <Box style={styles.header} alignItems='center' >
+      <Heading mx="3" alignItems="center" flexDirection="row">
+        Eshop
+      </Heading>
+      <Divider my="2" thickness="5"  _light={{
+        bg: "info.200"
+      }} _dark={{
+        bg: "info.200"
+      }} />
+    </Box>
   )
 }
 
 const styles = StyleSheet.create({
-    header: {
-        width:  '100%',
-        flexDirection: 'row',
-        alignContent: 'center',
-        justifyContent: 'center',
-        padding: 20,
-        marginTop: 10
-    }
+  header: {
+    width: '100%',
+    marginTop: 45
+  }
 })
 
 export default Header
