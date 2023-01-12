@@ -18,10 +18,10 @@ const ProductList = (props) => {
 
 const styles = StyleSheet.create({
   backgroundCard: {
-    width:width/2.1,
+    width:width/2.2,
     backgroundColor:'#f5f5f5',
     borderRadius: 20,
-    margin:5
+    marginBottom:5
   }
 })
 

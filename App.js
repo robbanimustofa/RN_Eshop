@@ -4,21 +4,18 @@ import { NativeBaseProvider, Box} from 'native-base'
 
 import ProductContainer from './Screens/Product/productContainer.js';
 import Header from './Shared/Header.js';
-import SearchBar from './Shared/SearchBar.js';
+// import SearchBar from './Shared/SearchBar.js';
 
 export default function App() {
   return (
-    // <View style={styles.container}>
     <NativeBaseProvider>
       <Header />
-      <SearchBar/>
-      <Box>
-        <ProductContainer style={styles.container} />
+      {/* <SearchBar  /> */}
+      <Box style={styles.container}>
+        <ProductContainer/>
       </Box>
       <StatusBar style="auto" />
     </NativeBaseProvider>
-
-    // </View>
   );
 }
 

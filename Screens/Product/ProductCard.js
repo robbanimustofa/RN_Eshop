@@ -27,8 +27,8 @@ const ProductCard = (props) => {
 
 const styles = StyleSheet.create({
     container: {
-        width: width / 2 - 30,
-        height: width / 2 ,
+        width: width / 2 - 35,
+        height: width / 2  ,
         padding: 10,
         borderRadius: 10,
         marginTop: 10,
@@ -40,9 +40,9 @@ const styles = StyleSheet.create({
     },
     card: {
         marginBottom: 10,
-        height: width / 4 - 10 - 50,
+        height: width / 4 - 10 - 40,
         backgroundColor: 'transparent',
-        width: width / 2 - 50 - 100
+        // width: width / 3 - 50 - 100
     },
     image: {
         width: width / 2 - 20 - 10,
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     },
     price: {
         fontSize: 20,
-        color: 'orange',
+        color: 'green',
         marginTop: 10
     }
 })
