@@ -1,8 +1,8 @@
 import React from 'react'
 import { StyleSheet, Dimensions, Text } from 'react-native'
-import { Box, ScrollView, FlatList } from 'native-base';
+import { Box, FlatList } from 'native-base';
 
-import ProductList from './ProductList';
+import ListSearch from '../../Shared/ListSearch';
 
 var { width } = Dimensions.get("window")
 
@@ -11,14 +11,12 @@ const SearchProduct = (props) => {
     const { productsFiltered } = props;
     return (
         <Box>
-            <Text style={styles.textSearch} >Hasil Pencarian</Text>
             {productsFiltered.length > 0 ? (
                 <Box>
+                    <Text style={styles.textSearch} >Hasil Pencarian</Text>
                     <FlatList
-                    horizontal={false}
-                    numColumns={2}
                     data={productsFiltered}
-                    renderItem={({ item }) => <ProductList key={item.id} item={item} />}
+                    renderItem={({ item }) => <ListSearch key={item.id} list={item} />}
                     keyExtractor={item => item._id}
                 />
                 </Box>

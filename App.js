@@ -4,6 +4,7 @@ import { NativeBaseProvider, Box} from 'native-base'
 
 import ProductContainer from './Screens/Product/productContainer.js';
 import Header from './Shared/Header.js';
+import ListSearch from './Shared/ListSearch.js';
 // import SearchBar from './Shared/SearchBar.js';
 
 export default function App() {
