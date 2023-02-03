@@ -21,29 +21,29 @@ const productContainer = () => {
         setFocus(false);
         return () => {
             setProducts([]),
-            setProductsFiltered([]);
+                setProductsFiltered([]);
             setFocus();
         }
     }, [])
 
     // Product Methods
-    const searchProductFunc = (text) => {
-        setProductsFiltered(
-            product.filter((i) => i.name.toLowerCase().includes(text.toLowerCase()))
-        );
-    };
+    // const searchProductFunc = (text) => {
+    //     setProductsFiltered(
+    //         product.filter((i) => i.name.toLowerCase().includes(text.toLowerCase()))
+    //     );
+    // };
 
-    const openList = () => {
-        setFocus(true);
-    };
+    // const openList = () => {
+    //     setFocus(true);
+    // };
 
-    const onBlur = () => {
-        setFocus(false);
-    };
+    // const onBlur = () => {
+    //     setFocus(false);
+    // };
 
     return (
         <View style={styles.container}>
-            <SearchBar title='Search Product' />
+            <SearchBar title='Search Product' data={productsFiltered} dataProduct={product} />
         </View>
     )
 }
@@ -74,7 +74,7 @@ export default productContainer
                     onFocus={openList} onChangeText={(text) =>
                         searchProductFunc(text)} />
             </Box> */}
-            {/* {focus == true ? (
+{/* {focus == true ? (
                 <SearchProduct productsFiltered={productsFiltered} />
             ) : (
                 <Box>
@@ -87,7 +87,7 @@ export default productContainer
                         keyExtractor={item => item._id} />
                 </Box>
             )} */}
-            {/* <Box>
+{/* <Box>
                     <FlatList
                         horizontal={false}
                         numColumns={2}
