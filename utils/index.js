@@ -1,5 +1,5 @@
 export const searchFunc = (arrayData, field, value) => {
-    return(
+    return (
         arrayData.filter((i) => i[field].toLowerCase().includes(value.toLowerCase()))
     );
-  };
+};

@@ -8,32 +8,33 @@ import { searchFunc } from '../utils/index'
 
 import ProductList from "../Screens/Product/ProductList";
 import SearchProduct from '../Screens/Product/SearchProduct.js'
-const dataSample = require('../assets/product.json')
+
 
 const SearchBar = (props) => {
-  const { title, data, dataProduct } = props
+  const { title, dataProduct } = props
 
   // const [product, setProducts] = useState([])
   const [focus, setFocus] = useState();
   const [productsFiltered, setProductsFiltered] = useState([]);
-
+  // const [inputSearch, setinputSearch] = useState();
 
   useEffect(() => {
     setFocus(false);
     setProductsFiltered(dataProduct);
-    // setProducts(dataSample);
+    // setinputSearch('');
     return () => {
       setFocus();
-      // setProducts([]);
+      // setinputSearch();
       setProductsFiltered([]);
     }
   }, [])
 
 
   const searchProductFunc = (text) => {
-    // console.log('alert ', text)
+    console.log('alert ', text)
     const value = searchFunc(dataProduct, 'name', text)
-    // console.warn('searchFunc', value)
+    console.warn('searchFunc', dataProduct)
+    console.warn('searchFuncValue', value)
     setProductsFiltered(value)
   };
 
@@ -43,7 +44,7 @@ const SearchBar = (props) => {
 
   const onBlur = () => {
     setFocus(false);
-    // setProductsFiltered(dataProduct)
+    setProductsFiltered(dataProduct)
   };
 
   return (
@@ -54,7 +55,8 @@ const SearchBar = (props) => {
           py="1" px="2" InputLeftElement={<Icon ml="2" size="4"
             color="gray.400" as={<Ionicons name="ios-search" />} />}
           InputRightElement={
-            focus == true ? <CloseIcon onClick={onBlur} size="4" mr="2" color="danger.600" /> : null
+            focus == true ? <CloseIcon onClick={onBlur}
+              size="4" mr="2" color="danger.600" /> : null
           }
           onFocus={openList} onChangeText={(text) =>
             searchProductFunc(text)} />
@@ -68,7 +70,7 @@ const SearchBar = (props) => {
           <FlatList
             horizontal={false}
             numColumns={2}
-            data={data}
+            data={dataProduct}
             renderItem={({ item }) =>
               <ProductList key={item.id} item={item} />}
             keyExtractor={item => item._id} />

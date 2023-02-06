@@ -1,0 +1,16 @@
+[
+    {
+        "_id": "63623929ccb5136022f1871e",
+        "name": "Charge 3W",
+        "icon": "Electronic",
+        "color": "Green",
+        "__v": 0
+    },
+    {
+        "_id": "63623929ccb5136022f1872e",
+        "name": "Learn React Native",
+        "icon": "Book",
+        "color": "Green",
+        "__v": 0
+    }
+]

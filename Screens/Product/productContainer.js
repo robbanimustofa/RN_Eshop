@@ -3,47 +3,29 @@ import { View, StyleSheet, ActivityIndicator, FlatList } from "react-native";
 import { Heading, Input, Icon, Box, CloseIcon } from 'native-base';
 import { Ionicons } from "@expo/vector-icons";
 
-import ProductList from "./ProductList";
+// import ProductList from "./ProductList";
 import SearchBar from "../../Shared/SearchBar";
-import SearchProduct from '../Product/SearchProduct.js'
+// import SearchProduct from '../Product/SearchProduct.js'
 
 const data = require('../../assets/product.json')
 
 const productContainer = () => {
 
-    const [product, setProducts] = useState([])
+    // const [product, setProducts] = useState([])
     const [productsFiltered, setProductsFiltered] = useState([]);
-    const [focus, setFocus] = useState();
 
     useEffect(() => {
-        setProducts(data);
+        // setProducts(data);
         setProductsFiltered(data);
-        setFocus(false);
         return () => {
-            setProducts([]),
-                setProductsFiltered([]);
-            setFocus();
+            // setProducts([]),
+            setProductsFiltered([]);
         }
     }, [])
 
-    // Product Methods
-    // const searchProductFunc = (text) => {
-    //     setProductsFiltered(
-    //         product.filter((i) => i.name.toLowerCase().includes(text.toLowerCase()))
-    //     );
-    // };
-
-    // const openList = () => {
-    //     setFocus(true);
-    // };
-
-    // const onBlur = () => {
-    //     setFocus(false);
-    // };
-
     return (
         <View style={styles.container}>
-            <SearchBar title='Search Product' data={productsFiltered} dataProduct={product} />
+            <SearchBar title='Search Product' dataProduct={productsFiltered} />
         </View>
     )
 }
@@ -51,6 +33,7 @@ const productContainer = () => {
 const styles = StyleSheet.create({
     container: {
         // flexWrap:'wrap',
+        marginBottom: 10,
         backgroundColor: '#fff',
     },
     search: {
