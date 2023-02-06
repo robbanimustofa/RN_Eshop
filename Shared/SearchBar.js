@@ -25,7 +25,7 @@ const SearchBar = (props) => {
     return () => {
       setFocus();
       // setinputSearch();
-      setProductsFiltered([]);
+      setProductsFiltered(dataProduct);
     }
   }, [])
 
@@ -33,18 +33,19 @@ const SearchBar = (props) => {
   const searchProductFunc = (text) => {
     console.log('alert ', text)
     const value = searchFunc(dataProduct, 'name', text)
-    console.warn('searchFunc', dataProduct)
+    console.warn('searchFunc', productsFiltered)
     console.warn('searchFuncValue', value)
     setProductsFiltered(value)
   };
 
   const openList = () => {
     setFocus(true);
+    setProductsFiltered(dataProduct)
+    console.warn('searchProductsFiltered', productsFiltered)
   };
 
   const onBlur = () => {
     setFocus(false);
-    setProductsFiltered(dataProduct)
   };
 
   return (
@@ -63,7 +64,7 @@ const SearchBar = (props) => {
       </Box>
 
       {focus == true ? (
-        <SearchProduct productsFiltered={dataProduct} />
+        <SearchProduct productsFiltered={productsFiltered} />
       ) : (
         <Box>
           {/* <Box>{JSON.stringify(productsFiltered)}</Box> */}
