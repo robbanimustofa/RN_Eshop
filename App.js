@@ -4,17 +4,19 @@ import { NativeBaseProvider, Box } from 'native-base'
 
 import ProductContainer from './Screens/Product/productContainer.js';
 import Header from './Shared/Header.js';
-import Category from './Screens/Categorie/Category'
+import LearnParent from './Shared/LearnParent.js';
+// import Category from './Screens/Categorie/Category'
 
-import dataTryCat from './assets/category.json'
+// import dataTryCat from './assets/category.json'
 
 export default function App() {
   return (
     <NativeBaseProvider>
       <Header />
       <Box style={styles.container}>
+        {/* <LearnParent /> */}
         <ProductContainer />
-        <Category dataCategory={dataTryCat} />
+        {/* <Category dataCategory={dataTryCat} /> */}
       </Box>
       <StatusBar style="auto" />
     </NativeBaseProvider>

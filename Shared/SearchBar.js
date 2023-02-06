@@ -62,21 +62,20 @@ const SearchBar = (props) => {
           onFocus={openList} onChangeText={(text) =>
             searchProductFunc(text)} />
       </Box>
-
       {focus == true ? (
         <SearchProduct productsFiltered={productsFiltered} />
-      ) : (
-        <Box>
-          {/* <Box>{JSON.stringify(productsFiltered)}</Box> */}
-          <FlatList
-            horizontal={false}
-            numColumns={2}
-            data={dataProduct}
-            renderItem={({ item }) =>
-              <ProductList key={item.id} item={item} />}
-            keyExtractor={item => item._id} />
-        </Box>
+      ) : (null
+        // <FlatList
+        //   horizontal={false}
+        //   numColumns={2}
+        //   data={dataProduct}
+        //   renderItem={({ item }) =>
+        //     <ProductList key={item.id} item={item} />}
+        //   keyExtractor={item => item._id} />
       )}
+      {/* // {focus == true ?()
+      //   <SearchProduct productsFiltered={productsFiltered} />
+      //   : null} */}
     </Box>
 
   )
