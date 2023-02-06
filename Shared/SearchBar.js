@@ -25,7 +25,7 @@ const SearchBar = (props) => {
     return () => {
       setFocus();
       // setinputSearch();
-      setProductsFiltered(dataProduct);
+      setProductsFiltered([]);
     }
   }, [])
 
