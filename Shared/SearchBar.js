@@ -5,8 +5,6 @@ import { Ionicons } from "@expo/vector-icons";
 
 
 import { searchFunc } from '../utils/index'
-
-import ProductList from "../Screens/Product/ProductList";
 import SearchProduct from '../Screens/Product/SearchProduct.js'
 
 
@@ -21,27 +19,20 @@ const SearchBar = (props) => {
   useEffect(() => {
     setFocus(false);
     setProductsFiltered(dataProduct);
-    // setinputSearch('');
     return () => {
       setFocus();
-      // setinputSearch();
       setProductsFiltered([]);
     }
   }, [])
 
 
   const searchProductFunc = (text) => {
-    console.log('alert ', text)
     const value = searchFunc(dataProduct, 'name', text)
-    console.warn('searchFunc', productsFiltered)
-    console.warn('searchFuncValue', value)
     setProductsFiltered(value)
   };
 
   const openList = () => {
     setFocus(true);
-    setProductsFiltered(dataProduct)
-    console.warn('searchProductsFiltered', productsFiltered)
   };
 
   const onBlur = () => {
@@ -65,17 +56,7 @@ const SearchBar = (props) => {
       {focus == true ? (
         <SearchProduct productsFiltered={productsFiltered} />
       ) : (null
-        // <FlatList
-        //   horizontal={false}
-        //   numColumns={2}
-        //   data={dataProduct}
-        //   renderItem={({ item }) =>
-        //     <ProductList key={item.id} item={item} />}
-        //   keyExtractor={item => item._id} />
       )}
-      {/* // {focus == true ?()
-      //   <SearchProduct productsFiltered={productsFiltered} />
-      //   : null} */}
     </Box>
 
   )
@@ -85,7 +66,6 @@ const styles = StyleSheet.create({
   search: {
     width: '100%',
     marginBottom: 10,
-    // paddingHorizontal: 10
   }
 })
 

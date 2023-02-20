@@ -5,27 +5,46 @@ import SearchBar from "../../Shared/SearchBar";
 import Category from '../Categorie/Category'
 import ProductList from "../Product/ProductList";
 
-
 const data = require('../../assets/product.json')
 import dataTryCat from '../../assets/category.json'
-import { Box } from "native-base";
 
 const productContainer = () => {
-    const [productsFiltered, setProductsFiltered] = useState([]);
-    // const [focus, setFocus] = useState();
+    const [productsFiltered, setProductsFiltered] = useState();
+    const [active, setActive] = useState(-1);
+    // const [productCategories, setproductCategories] = useState([]);
 
     useEffect(() => {
-        setProductsFiltered(data);
-        // setFocus(false);
+        getData()
         return () => {
-            // setFocus();
-            setProductsFiltered([]);
+            setProductsFiltered([]),
+                setActive()
+
         }
     }, [])
 
+    const getData = () => {
+        setProductsFiltered(data);
+    }
+
+    // Cat
+    const changeCtg = (ctg) => {
+        ctg === 'all'
+            ? [setProductsFiltered(data), setActive(true)] : [setProductsFiltered(
+                data.filter((i) => i.category._id === ctg), setActive(true)
+            )]
+    }
+
+
     return (
         <View style={styles.container}>
-            <SearchBar title='Search Product' dataProduct={productsFiltered} />
+            <SearchBar title='Search Product' dataProduct={data} />
+            <Category
+                dataCategory={dataTryCat}
+                categoryFilter={changeCtg}
+                productsCategory={productsFiltered}
+                active={active}
+                setActive={setActive}
+            />
             <FlatList
                 horizontal={false}
                 numColumns={2}
@@ -33,29 +52,12 @@ const productContainer = () => {
                 renderItem={({ item }) =>
                     <ProductList key={item.id} item={item} />}
                 keyExtractor={item => item._id} />
-            {/* {focus == false ? (
-                <SearchBar title='Search Product' dataProduct={productsFiltered} />
-            ) : (
-                <Box>
-                    <FlatList
-                        horizontal={false}
-                        numColumns={2}
-                        data={productsFiltered}
-                        renderItem={({ item }) =>
-                            <ProductList key={item.id} item={item} />}
-                        keyExtractor={item => item._id} />
-                    <Category dataCategory={dataTryCat} />
-                </Box>
-
-            )
-            } */}
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        // flexWrap:'wrap',
         marginBottom: 10,
         backgroundColor: '#fff',
     },

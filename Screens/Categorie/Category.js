@@ -3,13 +3,30 @@ import { HStack, Badge, Box } from 'native-base'
 import React from 'react'
 
 const Category = (props) => {
-    const { dataCategory } = props
+    // const { dataCategory } = props
     return (
         <HStack>
-            {dataCategory.length > 0 ? (
-                dataCategory.map((item) => (
+            <TouchableOpacity key={1}>
+                <Box onClick={() => {
+                    props.categoryFilter('all'), props.setActive(-1)
+                }} >
+                    {
+                        props.active == -1 ? <Badge style={styles.container} colorScheme="warning" rounded="full" >All</Badge> : <Badge style={styles.container} colorScheme="info" rounded="full" >All</Badge>
+                    }
+                </Box>
+
+            </TouchableOpacity>
+            {props.dataCategory.length > 0 ? (
+                props.dataCategory.map((item) => (
                     <TouchableOpacity key={item._id} >
-                        <Badge style={styles.container} rounded="full" >{item.icon}</Badge>
+                        <Box onClick={() => {
+                            props.categoryFilter(item._id), props.setActive(props.dataCategory.indexOf(item))
+                        }} >
+                            {
+                                props.active == props.dataCategory.indexOf(item) ? <Badge style={styles.container} colorScheme="warning" rounded="full" >{item.icon}</Badge> : <Badge style={styles.container} colorScheme="info" rounded="full" >{item.icon}</Badge>
+                            }
+                        </Box>
+
                     </TouchableOpacity>
 
                 ))

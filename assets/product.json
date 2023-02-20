@@ -58,9 +58,9 @@
         "brand": "product 1 brand",
         "price": "15",
         "category": {
-            "_id": "63623929ccb5136022f1871e",
+            "_id": "63623929ccb5136022f1872e",
             "name": "Charge 3W",
-            "icon": "Electronic",
+            "icon": "Car",
             "color": "Green",
             "__v": 0
         },

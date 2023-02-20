@@ -14,9 +14,7 @@ export default function App() {
     <NativeBaseProvider>
       <Header />
       <Box style={styles.container}>
-        {/* <LearnParent /> */}
         <ProductContainer />
-        {/* <Category dataCategory={dataTryCat} /> */}
       </Box>
       <StatusBar style="auto" />
     </NativeBaseProvider>
