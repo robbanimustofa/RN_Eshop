@@ -1,12 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet } from 'react-native';
 import { NativeBaseProvider, Box } from 'native-base';
-// import { NavigationContainer } from '@react-navigation/native'
+import { NavigationContainer } from '@react-navigation/native'
 
 // Navigator
-// import Main from './Navigators/Main.js';
+import Main from './Navigators/Main.js';
 
-import ProductContainer from './Screens/Product/productContainer.js';
+import ProductContainer from './Screens/Product/ProductContainer.js';
 import Header from './Shared/Header.js';
 import LearnParent from './Shared/LearnParent.js';
 // import Category from './Screens/Categorie/Category'
@@ -16,21 +16,21 @@ import LearnParent from './Shared/LearnParent.js';
 export default function App() {
   return (
     <NativeBaseProvider>
-      {/* <NavigationContainer> */}
-      <Header />
-      <Box style={styles.container}>
+      <NavigationContainer>
+        <Header />
+        {/* <Box style={styles.container}>
         <ProductContainer />
-      </Box>
-      {/* <Main /> */}
-      <StatusBar style="auto" />
-      {/* </NavigationContainer> */}
+      </Box> */}
+        <Main />
+        <StatusBar style="auto" />
+      </NavigationContainer>
     </NativeBaseProvider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     backgroundColor: '#fff',
     paddingHorizontal: 10,
   },

@@ -3,12 +3,12 @@ import { View, StyleSheet, FlatList } from "react-native";
 
 import SearchBar from "../../Shared/SearchBar";
 import Category from '../Categorie/Category'
-import ProductList from "../Product/ProductList";
+import ProductList from "./ProductList";
 
 const data = require('../../assets/product.json')
 import dataTryCat from '../../assets/category.json'
 
-const productContainer = () => {
+const ProductContainer = () => {
     const [productsFiltered, setProductsFiltered] = useState();
     const [active, setActive] = useState(-1);
     // const [productCategories, setproductCategories] = useState([]);
@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
     container: {
         marginBottom: 10,
         backgroundColor: '#fff',
+        paddingHorizontal: 10,
     },
     search: {
         width: '100%',
@@ -68,4 +69,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default productContainer
+export default ProductContainer
