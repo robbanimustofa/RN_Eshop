@@ -19,7 +19,8 @@ const Header = () => {
 
 const styles = StyleSheet.create({
   header: {
-    paddingVertical: 15
+    paddingVertical: 15,
+    marginTop: 25
   }
 })
 
