@@ -14,12 +14,6 @@ const Main = () => {
                 tabkeyboardHidesTabBar: false,
                 tabBarshowLabel: true,
                 tabBaractiveTintColor: '#22d3ee',
-                tabBarStyle: [
-                    {
-                        "display": "flex"
-                    },
-                    null
-                ]
             }}
         >
             <Tab.Screen

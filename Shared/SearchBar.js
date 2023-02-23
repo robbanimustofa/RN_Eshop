@@ -47,7 +47,7 @@ const SearchBar = (props) => {
           py="1" px="2" InputLeftElement={<Icon ml="2" size="4"
             color="gray.400" as={<Ionicons name="ios-search" />} />}
           InputRightElement={
-            focus == true ? <CloseIcon onClick={onBlur}
+            focus == true ? <CloseIcon onPress={onBlur}
               size="4" mr="2" color="danger.600" /> : null
           }
           onFocus={openList} onChangeText={(text) =>

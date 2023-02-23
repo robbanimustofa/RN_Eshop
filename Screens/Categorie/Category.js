@@ -6,24 +6,31 @@ const Category = (props) => {
     // const { dataCategory } = props
     return (
         <HStack>
-            <TouchableOpacity key={1}>
-                <Box onClick={() => {
+            <TouchableOpacity key={1}
+                onPress={() => {
                     props.categoryFilter('all'), props.setActive(-1)
                 }} >
+                <Box>
                     {
-                        props.active == -1 ? <Badge style={styles.container} colorScheme="warning" rounded="full" >All</Badge> : <Badge style={styles.container} colorScheme="info" rounded="full" >All</Badge>
+                        props.active == -1 ? <Badge style={styles.container} colorScheme="warning"
+                            rounded="full" >All</Badge> : <Badge style={styles.container} colorScheme="info"
+                                rounded="full" >All</Badge>
                     }
                 </Box>
 
             </TouchableOpacity>
             {props.dataCategory.length > 0 ? (
                 props.dataCategory.map((item) => (
-                    <TouchableOpacity key={item._id} >
-                        <Box onClick={() => {
-                            props.categoryFilter(item._id), props.setActive(props.dataCategory.indexOf(item))
+                    <TouchableOpacity key={item._id}
+                        onPress={() => {
+                            props.categoryFilter(item._id),
+                                props.setActive(props.dataCategory.indexOf(item))
                         }} >
+                        <Box>
                             {
-                                props.active == props.dataCategory.indexOf(item) ? <Badge style={styles.container} colorScheme="warning" rounded="full" >{item.icon}</Badge> : <Badge style={styles.container} colorScheme="info" rounded="full" >{item.icon}</Badge>
+                                props.active == props.dataCategory.indexOf(item) ?
+                                    <Badge style={styles.container} colorScheme="warning" rounded="full" >{item.icon}</Badge> :
+                                    <Badge style={styles.container} colorScheme="info" rounded="full" >{item.icon}</Badge>
                             }
                         </Box>
 

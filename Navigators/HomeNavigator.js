@@ -1,4 +1,3 @@
-import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 
@@ -13,7 +12,7 @@ function MyStack() {
                 name='Home'
                 component={ProductContainer}
                 options={{
-                    headerShown: false
+                    headerShown: false,
                 }}
 
             />
@@ -24,11 +23,3 @@ function MyStack() {
 export default function HomeNavigator() {
     return <MyStack />
 }
-
-const styles = StyleSheet.create({
-    container: {
-        // flex: 1,
-        backgroundColor: '#fff',
-        paddingHorizontal: 10,
-    },
-})

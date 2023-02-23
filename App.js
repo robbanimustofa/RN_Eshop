@@ -1,17 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet } from 'react-native';
-import { NativeBaseProvider, Box } from 'native-base';
+import { NativeBaseProvider } from 'native-base';
 import { NavigationContainer } from '@react-navigation/native'
 
 // Navigator
 import Main from './Navigators/Main.js';
 
-import ProductContainer from './Screens/Product/ProductContainer.js';
+// import ProductContainer from './Screens/Product/ProductContainer.js';
 import Header from './Shared/Header.js';
-import LearnParent from './Shared/LearnParent.js';
-// import Category from './Screens/Categorie/Category'
-
-// import dataTryCat from './assets/category.json'
+// import LearnParent from './Shared/LearnParent.js';
 
 export default function App() {
   return (

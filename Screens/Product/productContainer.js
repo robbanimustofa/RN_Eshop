@@ -58,9 +58,10 @@ const ProductContainer = () => {
 
 const styles = StyleSheet.create({
     container: {
-        marginBottom: 10,
+        // marginBottom: 10,
         backgroundColor: '#fff',
         paddingHorizontal: 10,
+        flex: 1,
     },
     search: {
         width: '100%',
