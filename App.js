@@ -3,6 +3,12 @@ import { StyleSheet } from 'react-native';
 import { NativeBaseProvider } from 'native-base';
 import { NavigationContainer } from '@react-navigation/native'
 
+// Redux
+import { Provider } from 'react-redux';
+import store from './Redux/store.js';
+
+
+
 // Navigator
 import Main from './Navigators/Main.js';
 
