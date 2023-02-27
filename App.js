@@ -18,16 +18,19 @@ import Header from './Shared/Header.js';
 
 export default function App() {
   return (
-    <NativeBaseProvider>
-      <NavigationContainer>
-        <Header />
-        {/* <Box style={styles.container}>
+    <Provider store={store} >
+      <NativeBaseProvider>
+        <NavigationContainer>
+          <Header />
+          {/* <Box style={styles.container}>
         <ProductContainer />
       </Box> */}
-        <Main />
-        <StatusBar style="auto" />
-      </NavigationContainer>
-    </NativeBaseProvider>
+          <Main />
+          <StatusBar style="auto" />
+        </NavigationContainer>
+      </NativeBaseProvider>
+    </Provider>
+
   );
 }
 

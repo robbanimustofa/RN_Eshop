@@ -1,6 +1,8 @@
 import React from 'react'
-import { View , Dimensions, StyleSheet, Image, Text } from 'react-native'
-import { Box , Button } from 'native-base'
+import { View, Dimensions, StyleSheet, Image, Text } from 'react-native'
+import { Box, Button } from 'native-base'
+import { connect } from 'react-redux'
+import * as actions from '../../Redux/Actions/cartAction'
 
 var { width } = Dimensions.get("window")
 
@@ -17,7 +19,9 @@ const ProductCard = (props) => {
             {
                 countInStock > 0 ? (
                     <Box style={{ marginVertical: 10 }}>
-                        <Button size='sm'>Add</Button>
+                        <Button size='sm' onPress={() => {
+                            props.addItemToCart(props)
+                        }}>Add</Button>
                     </Box>
                 ) : <Text style={{ marginTop: 20 }} > Current Unavailable </Text>
             }
@@ -25,10 +29,16 @@ const ProductCard = (props) => {
     )
 }
 
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addItemToCart: (product) => dispatch(actions.addToCart({ quantity: 1, product }))
+    }
+}
+
 const styles = StyleSheet.create({
     container: {
         width: width / 2 - 35,
-        height: width / 2  ,
+        height: width / 2,
         padding: 10,
         borderRadius: 10,
         marginTop: 10,
@@ -51,7 +61,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         top: -45
     },
-    
+
     title: {
         fontWeight: "bold",
         fontSize: 14,
@@ -64,4 +74,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default ProductCard
+export default connect(null, mapDispatchToProps)(ProductCard)
