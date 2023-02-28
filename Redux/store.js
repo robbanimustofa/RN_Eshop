@@ -6,6 +6,7 @@ import cartItems from './Reducer/cartItem'
 
 const reducers = combineReducers({
     cartItems: cartItems
+
 })
 
 const store = createStore(

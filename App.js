@@ -14,20 +14,18 @@ import Main from './Navigators/Main.js';
 
 // import ProductContainer from './Screens/Product/ProductContainer.js';
 import Header from './Shared/Header.js';
-// import LearnParent from './Shared/LearnParent.js';
+import LearnParent from './Shared/LearnParent.js';
 
 export default function App() {
   return (
     <Provider store={store} >
       <NativeBaseProvider>
-        <NavigationContainer>
+        {/* <NavigationContainer>
           <Header />
-          {/* <Box style={styles.container}>
-        <ProductContainer />
-      </Box> */}
           <Main />
           <StatusBar style="auto" />
-        </NavigationContainer>
+        </NavigationContainer> */}
+        <LearnParent />
       </NativeBaseProvider>
     </Provider>
 

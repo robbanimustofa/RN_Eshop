@@ -1,0 +1,4 @@
+export const ADD_TO_INCREMENT = "ADD_TO_INCREMENT"
+export const ADD_TO_DECREMENT = "ADD_TO_DECREMENT"
+export const CLEAR_STATE = "CLEAR_STATE"
+
