@@ -14,7 +14,7 @@ import Main from './Navigators/Main.js';
 
 // import ProductContainer from './Screens/Product/ProductContainer.js';
 import Header from './Shared/Header.js';
-import LearnParent from './Shared/LearnParent.js';
+import LearnParent from './Shared/Latihan/LearnParent';
 
 export default function App() {
   return (

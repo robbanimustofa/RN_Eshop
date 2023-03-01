@@ -9,7 +9,10 @@ const Chart = (props) => {
         <Box>
             {props.cartItems.map((x, index) => {
                 return (
-                    <Text key={index}>{x.product.name}</Text>
+                    <Text key={index}>
+                        {x.product.name}
+                        {x.quantity}
+                    </Text>
                 )
             })}
         </Box>
