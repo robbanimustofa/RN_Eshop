@@ -24,7 +24,7 @@ export default function App() {
           <Header />
           <Main />
           <StatusBar style="auto" />
-        // </NavigationContainer>
+        </NavigationContainer>
         {/* <LearnParent /> */}
       </NativeBaseProvider>
     </Provider>

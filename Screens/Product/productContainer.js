@@ -3,7 +3,8 @@ import { View, StyleSheet, FlatList } from "react-native";
 
 import SearchBar from "../../Shared/SearchBar";
 import Category from '../Categorie/Category'
-import ProductList from "./ProductList";
+// import ProductList from "./ProductList";
+import ProductCard from "./ProductCard";
 
 const data = require('../../assets/product.json')
 import dataTryCat from '../../assets/category.json'
@@ -49,7 +50,9 @@ const ProductContainer = () => {
                 numColumns={2}
                 data={productsFiltered}
                 renderItem={({ item }) =>
-                    <ProductList key={item.id} item={item} />}
+                    <ProductCard key={item.id} item={item} />}
+                // <ProductList key={item.id} item={item} />}
+
                 keyExtractor={item => item._id} />
         </View>
     )

@@ -1,31 +1,26 @@
 import React from 'react'
-import { View, Dimensions, StyleSheet, Image, Text } from 'react-native'
+import { View, Dimensions, StyleSheet, Image, Text, TouchableOpacity } from 'react-native'
 import { Box, Button } from 'native-base'
 import { connect } from 'react-redux'
 import * as actions from '../../Redux/Actions/cartAction'
 
+import TitleDescription from '../../Shared/ComponentUsefully/TitleDescription'
+
+
 var { width } = Dimensions.get("window")
 
 const ProductCard = (props) => {
-    const { name, price, image, countInStock } = props;
+    const { item } = props
     return (
-        <View style={styles.container}>
-            <Image style={styles.image} resizeMode="contain" />
-            <View style={styles.card} />
-            <Text style={styles.title} >
-                {name.length > 15 ? name.substring(0, 15 - 3) + '...' : name}
-            </Text>
-            <Text style={styles.price} >${price}</Text>
-            {
-                countInStock > 0 ? (
-                    <Box style={{ marginVertical: 10 }}>
-                        <Button size='sm' onPress={() => {
-                            props.addItemToCart(props)
-                        }}>Add</Button>
-                    </Box>
-                ) : <Text style={{ marginTop: 20 }} > Current Unavailable </Text>
-            }
-        </View>
+        <TouchableOpacity style={{ width: '50%' }} >
+            <Box style={styles.backgroundCard} >
+                <View style={styles.container}>
+                    <TitleDescription {...item} />
+                </View>
+            </Box>
+
+        </TouchableOpacity>
+
     )
 }
 
@@ -47,6 +42,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         elevation: 8,
         backgroundColor: 'white'
+    },
+    backgroundCard: {
+        width: width / 2.2,
+        backgroundColor: '#f5f5f5',
+        borderRadius: 20,
+        marginBottom: 5
     },
     card: {
         marginBottom: 10,
