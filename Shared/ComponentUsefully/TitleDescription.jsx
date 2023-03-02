@@ -1,12 +1,12 @@
 import { StyleSheet, Text, View, Image, Dimensions } from 'react-native'
 import React from 'react'
-import { Box, Button } from 'native-base'
+import { Box } from 'native-base'
 
 
 var { width } = Dimensions.get("window")
 
 const TitleDescription = (props) => {
-    const { name, price, countInStock } = props
+    const { name, price } = props
   return (
     <Box>
         <Image style={styles.image} resizeMode="contain" />
@@ -15,15 +15,6 @@ const TitleDescription = (props) => {
                         {name.length > 15 ? name.substring(0, 15 - 3) + '...' : name}
                     </Text>
                     <Text style={styles.price} >${price}</Text>
-                    {
-                        countInStock > 0 ? (
-                            <Box style={{ marginVertical: 10 }}>
-                                <Button size='sm' onPress={() => {
-                                    props.addItemToCart(props)
-                                }}>Add</Button>
-                            </Box>
-                        ) : <Text style={{ marginTop: 20 }} > Current Unavailable </Text>
-                    }
     </Box>
   )
 }

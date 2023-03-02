@@ -51,8 +51,6 @@ const ProductContainer = () => {
                 data={productsFiltered}
                 renderItem={({ item }) =>
                     <ProductCard key={item.id} item={item} />}
-                // <ProductList key={item.id} item={item} />}
-
                 keyExtractor={item => item._id} />
         </View>
     )

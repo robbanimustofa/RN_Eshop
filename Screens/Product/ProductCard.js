@@ -16,6 +16,15 @@ const ProductCard = (props) => {
             <Box style={styles.backgroundCard} >
                 <View style={styles.container}>
                     <TitleDescription {...item} />
+                    {
+                        item.countInStock > 0 ? (
+                            <Box style={{ marginVertical: 10 }}>
+                                <Button size='sm' onPress={() => {
+                                    props.addItemToCart(props)
+                                }}>Add</Button>
+                            </Box>
+                        ) : <Text style={{ marginTop: 20 }} > Current Unavailable </Text>
+                    }
                 </View>
             </Box>
 

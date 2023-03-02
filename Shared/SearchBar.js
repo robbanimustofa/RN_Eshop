@@ -11,10 +11,9 @@ import SearchProduct from '../Screens/Product/SearchProduct.js'
 const SearchBar = (props) => {
   const { title, dataProduct } = props
 
-  // const [product, setProducts] = useState([])
   const [focus, setFocus] = useState();
   const [productsFiltered, setProductsFiltered] = useState([]);
-  // const [inputSearch, setinputSearch] = useState();
+
 
   useEffect(() => {
     setFocus(false);

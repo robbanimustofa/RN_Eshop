@@ -1,17 +1,17 @@
 import React from 'react'
 import { Text } from 'native-base'
-import {  View, TouchableOpacity } from 'react-native'
+import { View, TouchableOpacity } from 'react-native'
 
+import CardSearch from './ComponentUsefully/CardSearch'
 
-import CardSearch from './CardSearch'
 
 const ListSearch = (props) => {
-    const {list} = props
+  const { list } = props
   return (
     <TouchableOpacity >
-        <View style={{marginBottom:10}} >
-            <CardSearch {...list} />
-        </View>
+      <View style={{ marginBottom: 10 }} >
+        <CardSearch {...list} />
+      </View>
     </TouchableOpacity>
   )
 }

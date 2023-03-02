@@ -1,7 +1,7 @@
 import React from 'react'
 import { Dimensions, View, TouchableOpacity, StyleSheet } from 'react-native'
 
-import ProductCard from '../ProductCard'
+import ProductCard from '../../Screens/Product/ProductCard'
 
 var { width } = Dimensions.get("window")
 
