@@ -11,7 +11,6 @@ import dataTryCat from '../../assets/category.json'
 const ProductContainer = () => {
     const [productsFiltered, setProductsFiltered] = useState();
     const [active, setActive] = useState(-1);
-    // const [productCategories, setproductCategories] = useState([]);
 
     useEffect(() => {
         getData()

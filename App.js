@@ -20,12 +20,12 @@ export default function App() {
   return (
     <Provider store={store} >
       <NativeBaseProvider>
-        {/* <NavigationContainer>
+        <NavigationContainer>
           <Header />
           <Main />
           <StatusBar style="auto" />
-        </NavigationContainer> */}
-        <LearnParent />
+        // </NavigationContainer>
+        {/* <LearnParent /> */}
       </NativeBaseProvider>
     </Provider>
 
